@@ -25,12 +25,9 @@ def create_all():
 
 def populate_object(obj, data_dictionary):
   fields = data_dictionary.keys()
-  # updated_fields = []
   for field in fields:
-    if getattr(obj, field):  # If the user object has the field 'field'...
+    if getattr(obj, field): 
       setattr(obj, field, data_dictionary[field])
-  #     updated_fields.append(field)
-  # return updated_fields
     
 @app.route('/user/add', methods=['POST'] )
 def user_add():
